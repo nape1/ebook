@@ -1,3 +1,5 @@
+import EbookReader from "@components/EbookReader"
+import FileUploader from "@components/FileUploader"
 import HelloWorld from "@components/HelloWorld"
 
 function App() {
@@ -8,6 +10,8 @@ function App() {
          📚 Ebook Readers ...
       </h1>
       <HelloWorld />
+      <FileUploader/>
+      {/* <EbookReader/> */}
     </>
   )
 }
