@@ -12,7 +12,7 @@ import './Sample.css';
 import type { PDFDocumentProxy } from 'pdfjs-dist';
 
 
-pdfjs.GlobalWorkerOptions.workerSrc = '/src/components/PdfViewer/pdf.worker.min.js'
+pdfjs.GlobalWorkerOptions.workerSrc = '/js/pdf.worker.min.js'
 
 // pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 //   'pdfjs-dist/build/pdf.worker.min.js',
@@ -31,7 +31,7 @@ const maxWidth = 800;
 type PDFFile = string | File | null;
 
 export default function Sample() {
-  const [file, setFile] = useState<PDFFile>('./sample.pdf');
+  const [file, setFile] = useState<PDFFile>('https://pdftron.s3.amazonaws.com/downloads/pl/Chart_.Vector.pdf');
   const [numPages, setNumPages] = useState<number>();
   const [containerRef, setContainerRef] = useState<HTMLElement | null>(null);
   const [containerWidth, setContainerWidth] = useState<number>();

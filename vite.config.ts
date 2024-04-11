@@ -47,4 +47,9 @@ export default defineConfig({
       "@styles": path.resolve(__dirname, "src/styles"),
     },
   },
+  optimizeDeps:{
+    include:[
+        // include fileshere to transpile during build
+    ]
+  }
 })
