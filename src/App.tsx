@@ -5,6 +5,8 @@ import useBase64File from "./hooks/useBase64File"
 import { useState } from "react"
 import PdfViewer from "@components/PdfViewer"
 
+import Sample from "@components/PdfViewer/Sample"
+
 function App() {
   const [file, setFile] = useState("")
   const data = useBase64File(file, "application/epub+zip")
@@ -16,9 +18,10 @@ function App() {
     <>
       <h1>📚 Ebook Readers ...</h1>
       <HelloWorld />
-      <FileUploader fileSelectHandler={setFile} />
-      <EbookReader />
-      <PdfViewer/>
+      <Sample/>
+      {/* <FileUploader fileSelectHandler={setFile} /> */}
+      {/* <EbookReader /> */}
+      {/* <PdfViewer /> */}
     </>
   )
 }
