@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react"
 
-const FileUploader: React.FC = () => {
+type FileUploaderProps = {
+    fileSelectHandler: (file: string) => void
+}
+
+const FileUploader = ({fileSelectHandler}:FileUploaderProps) => {
   const [file, setFile] = useState<File | null>(null)
   const [base64String, setBase64String] = useState<string | null>(null)
   const [fileURL, setFileURL] = useState<string | null>(null)
@@ -9,17 +13,17 @@ const FileUploader: React.FC = () => {
     useEffect(() => {
         base64String && localStorage.setItem(`${file?.name}-base64`, base64String);
         fileURL && localStorage.setItem(`${file?.name}-blob`, fileURL);
-    
       return () => {
         console.log('unmount');
       }
-    }, [base64String, fileURL, file])
+    }, [base64String, fileURL, file, fileSelectHandler])
     
 
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
-
+    // console.log(file);
+    
     if (file) {
       setFile(file)
       const reader = new FileReader()
@@ -29,6 +33,7 @@ const FileUploader: React.FC = () => {
 
           setFileURL(URL.createObjectURL(file))
           setBase64String(base64)
+          fileSelectHandler(base64)
         }
       }
       reader.readAsDataURL(file)
