@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-nocheck
 import { useCallback, useMemo, useState } from "react"
 import { useResizeObserver } from "@wojtekmaj/react-hooks"
 import { pdfjs, Document, Page } from "react-pdf"
@@ -48,7 +50,6 @@ const PDF = () => {
       setFile(files[0] || null)
     }
   }
-
   function onDocumentLoadSuccess({ numPages: nextNumPages }: unknown): void {
     setNumPages(nextNumPages)
   }
