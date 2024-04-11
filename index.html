@@ -1,13 +1,29 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>eBookR</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <script>
+        // if ('serviceWorker' in navigator) {
+        //     window.addEventListener('load', function () {
+        //         navigator.serviceWorker.register('public/js/pdf.worker.min.js').then(function (registration) {
+        //             // Registration was successful
+        //             console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        //         }, function (err) {
+        //             // registration failed :(
+        //             console.log('ServiceWorker registration failed: ', err);
+        //         });
+        //     });
+        // }
+    </script>
+</body>
+
 </html>

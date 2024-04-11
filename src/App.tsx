@@ -1,13 +1,12 @@
-import HelloWorld from "@components/HelloWorld"
+import PDF from "@components/PdfViewer/PDF"
 
 function App() {
-
   return (
     <>
-      <h1>
-         📚 Ebook Readers ...
-      </h1>
-      <HelloWorld />
+      <h1>📚 Ebook Readers</h1>
+      <div>
+        <PDF />
+      </div>
     </>
   )
 }
