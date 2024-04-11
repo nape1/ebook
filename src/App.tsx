@@ -1,3 +1,4 @@
+import FileUploader from "@components/FileUploader"
 import PDF from "@components/PdfViewer/PDF"
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
     <>
       <h1>📚 Ebook Readers</h1>
       <div>
+        <FileUploader />
         <PDF />
       </div>
     </>
